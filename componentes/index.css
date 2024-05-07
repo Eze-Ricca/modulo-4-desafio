@@ -1,0 +1,12 @@
+.logo {
+  width: 70px;
+  height: 41px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  align-items: center;
+  font-family: "Dancing Script", cursive;
+  background-color: #192130;
+  border-radius: 0px 20px 0px 20px;
+  border: var(--boton-bg-color) solid 1px;
+}

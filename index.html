@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modulo 4</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Poppins:wght@400;500;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Poppins:wght@400;500;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./componentes/index.css" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <script defer src="./componentes/index.js"></script>
+    <script defer src="./pages/index.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <!-- inicia Menu -->
+      <div class="header">
+        <!--  <section class="container-menu-hamburguesa">
+          <div class="nav-menu-desktop">
+            <div class="nav-menu-desktop-logo"></div>
+            <nav class="nav-menu-desktop-links">
+              <ul>
+                <li><a href="">Portfolio</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#form">Contacto</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="nav-menu-hamburguesa">
+            <div class="nav-menu-hamburguesa-logo"></div>
+            <nav class="nav-menu-hamburguesa-links">
+              <button class="nav-menu-hamburguesa-btn-open">
+                <i class="fa-solid fa-bars"></i>
+              </button>
+              <div class="nav-menu-hamburguesa-container">
+                <button class="nav-menu-hamburguesa-btn-clear">
+                  <i class="fa-solid fa-x"></i>
+                </button>
+                <ul>
+                  <li>
+                    <a class="nav-menu-hamburguesa-anchor" href="">Portfolio</a>
+                  </li>
+                  <li>
+                    <a class="nav-menu-hamburguesa-anchor" href="#services"
+                      >Servicios</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-menu-hamburguesa-anchor" href="#form"
+                      >Contacto</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </section> -->
+        <!-- hasta aqui es el menu y empieza la section welcome-->
+        <!-- <section class="welcome">
+          <div class="welcome-container">
+            <div class="welcome-container-h1">
+              <h1>Hola <br /><span>Soy Eze</span></h1>
+            </div>
+            <div class="welcome-container-imagen">
+              <img class="welcome-container-imagen-img" src="" alt="" />
+              <div class="div-sombra"></div>
+            </div>
+          </div>
+        </section> -->
+      </div>
+    </header>
+    <!-- <hr /> -->
+    <!-- Aqui temina la section welcome -->
+    <!-- Termina header inicia main -->
+    <main>
+      <!-- inicia section about-me -->
+      <section class="about-me" id="about-me">
+        <article class="about-me-container" id="services">
+          <div class="about-me-container-txts">
+            <h3 class="about-me-container-txts-h3"></h3>
+            <p class="about-me-container-txts-paragraph"></p>
+          </div>
+          <img class="about-me-container-img" src="" alt="" />
+        </article>
+      </section>
+      <!-- Termina setcion about-me e inicia section services-->
+      <section class="services">
+        <article class="services-container">
+          <div id="probando"></div>
+          <h2>Mis <span>servicios</span></h2>
+          <div class="cards">
+            <div class="cards-container"></div>
+            <template class="template-card">
+              <div class="card">
+                <img class="card-img" src="" alt="" />
+                <div class="card-texts">
+                  <h3 class="card-texts-title"></h3>
+                  <p class="card-texts-paragraph"></p>
+                </div>
+                <a class="card-url" href="" target="_blank">Ver mas</a>
+              </div>
+            </template>
+          </div>
+        </article>
+      </section>
+
+      <!-- aqui termina la section services e inicia la section form -->
+      <section class="form" id="form">
+        <form class="me-form" action="https://apx-api.vercel.app/api/utils/dwf">
+          <div class="me-form-h2">
+            <h2>Escribime</h2>
+          </div>
+          <div class="me-form-container">
+            <div class="container-label">
+              <label
+                ><span>Nombre</span
+                ><input
+                  type="text"
+                  name="name"
+                  placeholder="Tu Nombre"
+                  pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                  title="Nombre sólo acepta letras y espacios en blanco"
+                  required
+              /></label>
+
+              <label
+                ><span>Email</span
+                ><input
+                  type="text"
+                  name="email"
+                  placeholder="tu@mail.com"
+                  required
+              /></label>
+            </div>
+            <label
+              ><span>Mensaje</span>
+              <textarea
+                class="me-form-textarea"
+                name="textarea"
+                id="textarea"
+                required
+              ></textarea>
+            </label>
+            <button class="me-form-button" type="submit">
+              Enviar <span><i class="fa-regular fa-paper-plane"></i></span>
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer id="footer">
+      <div class="footer">
+        <section class="footer-container">
+          <div class="footer-container-logo"></div>
+          <ul class="footer-container-contact">
+            <li>
+              <a href="#"
+                ><span><i class="fa-solid fa-house"></i></span> Home</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span><i class="fa-solid fa-user"></i></span>Services</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span><i class="fa-solid fa-phone"></i></span>Contact</a
+              >
+            </li>
+          </ul>
+
+          <ul class="footer-container-redes">
+            <li>
+              <a href=""
+                ><span><i class="fa-brands fa-instagram"></i> </span
+              ></a>
+            </li>
+            <li>
+              <a href=""
+                ><span><i class="fa-brands fa-github"></i> </span
+              ></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-brands fa-twitter"></i> </a>
+            </li>
+          </ul>
+
+          <p>©2023 - https://apx.school</p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
