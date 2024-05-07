@@ -29,7 +29,7 @@ function header1(el) {
                     </li>
                     <li>
                       <a class="nav-menu-hamburguesa-anchor" href="#probando"
-                        >Servicios</a
+                        >Trabajos</a
                       >
                     </li>
                     <li>
