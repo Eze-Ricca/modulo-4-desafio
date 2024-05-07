@@ -17,9 +17,9 @@ function header(el) {
             <div class="nav-menu-desktop-logo"></div>
             <nav class="nav-menu-desktop-links">
               <ul>
-                <li><a href="">Portfolio</a></li>
+                <li><a href="https://eze-ricca.github.io/modulo-4-desafio/portfolio">Portfolio</a></li>
                 <li><a href="#probando">Servicios</a></li>
-                <li><a href="#form">Contacto</a></li>
+                <li><a href="https://eze-ricca.github.io/modulo-4-desafio/contact">Contacto</a></li>
               </ul>
             </nav>
           </div>
@@ -35,7 +35,7 @@ function header(el) {
                 </button>
                 <ul>
                   <li>
-                    <a class="nav-menu-hamburguesa-anchor" href="">Portfolio</a>
+                    <a class="nav-menu-hamburguesa-anchor" href="https://eze-ricca.github.io/modulo-4-desafio/portfolio">Portfolio</a>
                   </li>
                   <li>
                     <a class="nav-menu-hamburguesa-anchor" href="#probando"
@@ -43,7 +43,7 @@ function header(el) {
                     >
                   </li>
                   <li>
-                    <a class="nav-menu-hamburguesa-anchor" href="#form"
+                    <a class="nav-menu-hamburguesa-anchor" href="https://eze-ricca.github.io/modulo-4-desafio/contact"
                       >Contacto</a
                     >
                   </li>
