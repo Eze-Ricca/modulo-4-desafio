@@ -136,30 +136,30 @@ async function cardMisServicios() {
 //
 
 // formulario
-async function postData() {
-  const formulario = document.querySelector(".me-form");
+async function postData(e) {
   // console.log(formulario);
-  formulario.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    console.log(formData.entries());
-    const objeto = Object.fromEntries(formData.entries());
-    console.log(objeto);
+  console.log("Hola");
+  const formData = new FormData(e.target);
+  console.log(formData.entries());
+  const objeto = Object.fromEntries(formData.entries());
+  console.log("objeto", objeto);
 
-    fetch("	https://apx-api.vercel.app/api/utils/dwf", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        nombre: objeto.name,
-        to: objeto.email,
-        comentarios: objeto.textarea,
-      }),
-    });
+  const respuesta = await fetch("	https://apx-api.vercel.app/api/utils/dwf", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      nombre: objeto.name,
+      to: objeto.email,
+      comentarios: objeto.textarea,
+    }),
   });
+  const data = await respuesta.json();
+  console.log(data);
 }
-//
+//  formulario.addEventListener("submit", (e) => {
+
 async function main() {
   //
   const headerIndexEl = document.querySelector(".header");
@@ -172,6 +172,7 @@ async function main() {
   //
   const logofooter = document.querySelector(".footer-container-logo");
   logo(logofooter);
+  //
 
   // ----------------
   welcome();
@@ -182,9 +183,14 @@ async function main() {
   // ------------------
   menuHamburguesa();
   // ------------------
-  formulario();
+  // formulario();
   // ------------------
-  postData();
+  const formulario = document.querySelector(".me-form");
+  formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
+    postData(e);
+  });
+
   //
   // footer();
 }
