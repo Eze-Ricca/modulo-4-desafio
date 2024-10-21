@@ -5,14 +5,12 @@ async function welcome() {
   const accessToken = `r5ehHXkNqZeSsMXN0pSo_P8wOqmodXSTRhsj-NePIk8`;
   const contentType = `header`;
   const url = `https://cdn.contentful.com/spaces/${spaceId}/environments/${environment}/entries?access_token=${accessToken}&content_type=${contentType}`;
-  console.log(url);
+
   const urlFetch = await fetch(url);
   const dataJson = await urlFetch.json();
   const items = dataJson.items;
   const assets = dataJson.includes.Asset;
 
-  console.log(items);
-  console.log("asset", assets);
   for (let index = 0; index < items.length; index++) {
     let itemsFieldsCampos = items[1].fields;
     const imagenBuscadaEnFieldsCampos = items[1].fields.imagen.sys.id;
@@ -20,7 +18,6 @@ async function welcome() {
       (asset) => imagenBuscadaEnFieldsCampos === asset.sys.id
     );
     if (imagen) {
-      console.log("imagen", imagen.fields.file.url);
       itemsFieldsCampos.src = imagen.fields.file.url;
     }
 
@@ -40,7 +37,7 @@ async function aboutMeSection() {
   const accessToken = `r5ehHXkNqZeSsMXN0pSo_P8wOqmodXSTRhsj-NePIk8`;
   const contentType = `productos`;
   const url = `https://cdn.contentful.com/spaces/${spaceId}/environments/${environment}/entries?access_token=${accessToken}&content_type=${contentType}`;
-  console.log(url);
+
   const urlFetch = await fetch(url);
   const dataJson = await urlFetch.json();
   // Contentfull trae las imagenes y los items separados asi que me traigo los items en una constante "items" y las imagenes en una constante "assets"
@@ -135,31 +132,6 @@ async function cardMisServicios() {
 }
 //
 
-// formulario
-async function postData(e) {
-  // console.log(formulario);
-  console.log("Hola");
-  const formData = new FormData(e.target);
-  console.log(formData.entries());
-  const objeto = Object.fromEntries(formData.entries());
-  console.log("objeto", objeto);
-
-  const respuesta = await fetch("	https://apx-api.vercel.app/api/utils/dwf", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      nombre: objeto.name,
-      to: objeto.email,
-      comentarios: objeto.textarea,
-    }),
-  });
-  const data = await respuesta.json();
-  console.log(data);
-}
-//  formulario.addEventListener("submit", (e) => {
-
 async function main() {
   //
   const headerIndexEl = document.querySelector(".header");
@@ -188,7 +160,48 @@ async function main() {
   const formulario = document.querySelector(".me-form");
   formulario.addEventListener("submit", (e) => {
     e.preventDefault();
-    postData(e);
+    const formulario = document.querySelector(".me-form");
+    formulario.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const url = "https://apx.school/api/utils/email-to-student";
+      const email = `riccaesteban@gmail.com`;
+      const message = `mensaje a enviar`;
+
+      const formName = await document.querySelector(".input-name").value;
+      const formEmail = await document.querySelector(".input-email").value;
+      const fd = await document.querySelector(".me-form-textarea").value;
+      // postData(e);
+      try {
+        const respuesta = await fetch(url, {
+          method: `POST`,
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            to: email,
+            message: {
+              name: formName,
+              // email: formEmail,
+              message: `Nombre: ${formName}\nEmail: ${formEmail}\nMensaje: ${message}`,
+            },
+          }),
+        });
+        const respuestaDos = await respuesta.json();
+        console.log(respuestaDos.message);
+        if (respuestaDos) {
+          const spanCorrect = document.createElement("span");
+          spanCorrect.textContent = `Mensaje enviado correctamente`;
+          spanCorrect.classList.add("spanCorrect");
+          e.target.appendChild(spanCorrect);
+        } else {
+          throw new Error("Error al enviar el email");
+        }
+      } catch (error) {
+        console.log("a surgido un error:", error);
+        const spanError = document.createElement("span");
+        spanError.textContent = `A ocurrido un error intente nuevamente`;
+        spanError.classList.add("spanError");
+        e.target.appendChild(spanError);
+      }
+    });
   });
 
   //

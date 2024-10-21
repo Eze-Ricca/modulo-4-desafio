@@ -10,7 +10,7 @@ function logo(el) {
 // header componente
 function header(el) {
   const headerEl = document.createElement("div");
-  console.log(headerEl);
+  // console.log(headerEl);
   headerEl.innerHTML = `
   <section class="container-menu-hamburguesa">
           <div class="nav-menu-desktop">

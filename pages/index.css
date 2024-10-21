@@ -488,9 +488,19 @@ main {
 .me-form-button:hover {
   background-color: var(--boton-bg-hover);
 }
+.alert {
+  background-color: green;
+}
+@media (min-width: 1024px) {
+  .me-form {
+    gap: 40px;
+    flex-direction: column;
+  }
+}
 @media (max-width: 1024px) {
   .me-form {
     gap: 40px;
+    flex-direction: column;
   }
 }
 @media (max-width: 768px) {
@@ -561,4 +571,20 @@ main {
 }
 .footer-container p {
   margin-left: 40px;
+}
+.spanError {
+  background: red;
+  border-radius: 12px;
+  display: block;
+  margin-top: 20px;
+  font-size: 20px;
+  padding: 10px;
+}
+.spanCorrect {
+  background: green;
+  border-radius: 12px;
+  display: block;
+  margin-top: 20px;
+  font-size: 20px;
+  padding: 10px;
 }
