@@ -10,7 +10,7 @@ function logo(el) {
 // header componente
 function header(el) {
   const headerEl = document.createElement("div");
-  // console.log(headerEl);
+
   headerEl.innerHTML = `
   <section class="container-menu-hamburguesa">
           <div class="nav-menu-desktop">
@@ -70,7 +70,7 @@ function header(el) {
 //menu hamburguesa
 function menuHamburguesa() {
   const buttonOpenEl = document.querySelector(".nav-menu-hamburguesa-btn-open");
-  // console.log(buttonOpenEl);
+
   const buttonClearEl = document.querySelector(
     ".nav-menu-hamburguesa-btn-clear"
   );

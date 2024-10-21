@@ -1,25 +1,3 @@
-//
-async function postData(e) {
-  // console.log(formulario);
-  // console.log("Hola");
-  // const formData = new FormData(e.target);
-  // console.log(formData.entries());
-  // const objeto = Object.fromEntries(formData.entries());
-  // console.log("objeto", objeto);
-  // const respuesta = await fetch("https://apx-api.vercel.app/api/utils/dwf", {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify({
-  //     nombre: objeto.name,
-  //     to: objeto.email,
-  //     comentarios: objeto.textarea,
-  //   }),
-  // });
-  // const data = await respuesta.json();
-  // console.log(data);
-}
 async function main() {
   //
   const logoDesktop = document.querySelector(".nav-menu-desktop-logo");
@@ -40,7 +18,7 @@ async function main() {
     const formName = await document.querySelector(".input-name").value;
     const formEmail = await document.querySelector(".input-email").value;
     const fd = await document.querySelector(".me-form-textarea").value;
-    // postData(e);
+
     try {
       const respuesta = await fetch(url, {
         method: `POST`,
@@ -49,7 +27,6 @@ async function main() {
           to: email,
           message: {
             name: formName,
-            // email: formEmail,
             message: `Nombre: ${formName}\nEmail: ${formEmail}\nMensaje: ${message}`,
           },
         }),
